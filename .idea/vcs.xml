@@ -2,7 +2,5 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/AngularChampionsBE" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/AngularChampionsFE" vcs="Git" />
   </component>
 </project>
