@@ -2,8 +2,10 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { ChampionListComponent } from './champion-list/champion-list.component';
+import { AppComponent } from './components/app/app.component';
+import { ChampionListComponent } from './components/champion-list/champion-list.component';
+import {CommonModule} from "@angular/common";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -11,8 +13,10 @@ import { ChampionListComponent } from './champion-list/champion-list.component';
     ChampionListComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

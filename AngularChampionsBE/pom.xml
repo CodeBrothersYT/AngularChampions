@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>AngularChampions</artifactId>
+	<artifactId>AngularChampionsBE</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>AngularChampions</name>
 	<description>AngularChampions</description>
