@@ -10,15 +10,15 @@ public class Champion {
     private long id;
     private String firstName;
     private String lastName;
-    private String emailId;
+    private String email;
 
     public Champion() {
     }
 
-    public Champion(String firstName, String lastName, String emailId) {
+    public Champion(String firstName, String lastName, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.emailId = emailId;
+        this.email = email;
     }
 
     public long getId() {
@@ -45,11 +45,11 @@ public class Champion {
         this.lastName = lastName;
     }
 
-    public String getEmailId() {
-        return emailId;
+    public String getemail() {
+        return email;
     }
 
-    public void setEmailId(String emailId) {
-        this.emailId = emailId;
+    public void setemail(String email) {
+        this.email = email;
     }
 }

@@ -3,13 +3,13 @@ export class Champion {
   id: number;
   firstName: string;
   lastName: string;
-  emailId: string;
+  email: string;
 
 
-  constructor(id: number, firstName: string, lastName: string, emailId: string) {
+  constructor(id: number, firstName: string, lastName: string, email: string) {
     this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;
-    this.emailId = emailId;
+    this.email = email;
   }
 }
