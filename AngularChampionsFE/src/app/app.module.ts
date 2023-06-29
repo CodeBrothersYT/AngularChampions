@@ -13,7 +13,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
   declarations: [
     AppComponent,
     ChampionListComponent,
-    ChampionFormComponent
+    ChampionFormComponent,
   ],
   imports: [
     CommonModule,

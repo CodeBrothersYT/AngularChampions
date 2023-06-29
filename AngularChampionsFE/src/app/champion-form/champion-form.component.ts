@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import {Champion} from "../classes/champion";
 import {FormControl, FormGroup} from "@angular/forms";
+import {ChampionService} from "../services/champion.service";
+import {Router} from "@angular/router";
+import {tap} from "rxjs";
 
 @Component({
   selector: 'app-champion-form',
@@ -9,14 +12,38 @@ import {FormControl, FormGroup} from "@angular/forms";
 })
 export class ChampionFormComponent {
 
-  champion?: Champion = undefined;
+  champion: Champion = new Champion();
+
+  constructor(private championService: ChampionService,
+              private router: Router) {
+
+  }
 
   championForm = new FormGroup({
     firstName: new FormControl(''),
     lastName: new FormControl(''),
     email: new FormControl('')
   })
+
+  saveChampion(championFormValue: FormGroup) {
+    this.championService.createChampion({...championFormValue.value})
+      .pipe(
+        tap(champion => {
+          this.navigateToChampionList();
+        })
+      )
+      .subscribe(
+        error => console.error(error)
+      );
+  }
+
+  navigateToChampionList(){
+    this.router.navigate(['/champions'])
+  }
   onSubmit() {
-    console.log(this.championForm.value)
+    if(this.championForm.valid){
+      console.log("Form submitted!")
+      this.saveChampion(this.championForm)
+    }
   }
 }

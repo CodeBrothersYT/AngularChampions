@@ -1,5 +1,4 @@
-export class Champion {
-  id: number = 0;
+export class ChampionDTO {
   firstName: string = '';
   lastName: string = '';
   email: string = '';

@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Champion} from "../classes/champion";
+import {ChampionDTO} from "../DTOs/champion-dto/champion-dto.component";
 
 @Injectable({
   providedIn: 'root'
@@ -13,5 +14,9 @@ export class ChampionService {
 
   getChampions() : Observable<Champion[]> {
     return this.httpClient.get<Champion[]>(`${this.baseURL}`)
+  }
+
+  createChampion(champion: ChampionDTO): Observable<Champion> {
+    return this.httpClient.post<Champion>(`${this.baseURL}`, champion)
   }
 }
