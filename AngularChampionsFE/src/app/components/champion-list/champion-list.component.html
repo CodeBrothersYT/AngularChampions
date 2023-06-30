@@ -12,6 +12,11 @@
         <td> {{champion.firstName}}</td>
         <td> {{champion.lastName}}</td>
         <td> {{champion.email}}</td>
+      <td>
+      <button (click)="updateChampion(champion.id)" class="btn btn-info">
+          Update
+      </button>
+      </td>
     </tr>
   </tbody>
 </table>

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {ChampionListComponent} from "./components/champion-list/champion-list.component";
 import {ChampionFormComponent} from "./champion-form/champion-form.component";
+import {UpdateChampionComponent} from "./update-champion/update-champion.component";
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
     path: '',
     redirectTo: 'champions',
     pathMatch: 'full',
+  },
+  {
+    path: 'update-champion/:id',
+    component: UpdateChampionComponent
   }
 ];
 

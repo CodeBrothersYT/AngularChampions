@@ -19,4 +19,12 @@ export class ChampionService {
   createChampion(champion: ChampionDTO): Observable<Champion> {
     return this.httpClient.post<Champion>(`${this.baseURL}`, champion)
   }
+
+  getChampionById(id?: number): Observable<Champion> {
+    return this.httpClient.get<Champion>(`${this.baseURL}/${id}`)
+  }
+
+  updateChampion(id: number, champion: ChampionDTO): Observable<Champion> {
+    return this.httpClient.put<Champion>(`${this.baseURL}/${id}`, champion)
+  }
 }

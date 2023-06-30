@@ -31,6 +31,7 @@ public class ChampionController {
     }
 
     @GetMapping("/champions/{id}")
+    @CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
     public ResponseEntity<Champion> getChampionById(@PathVariable Long id){
         Champion champion = championRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("No champion found with id: %s".formatted(id)));
@@ -44,9 +45,13 @@ public class ChampionController {
         return championRepository.save(champion);
     }
 
-    @PutMapping("/champions")
-    public Champion updateChampion(@RequestBody Champion champion){
-        return championRepository.save(champion);
+    @PutMapping("/champions/{id}")
+    public ResponseEntity<Champion> updateChampion(@PathVariable Long id, @RequestBody ChampionDTO championDTO){
+        Champion champion = championRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("No champion found with id: %s".formatted(id)));
+        championMapper.updateChampionFromDTO(championDTO, champion);
+        championRepository.save(champion);
+        return ResponseEntity.ok(champion);
     }
 
     @DeleteMapping("/champions")

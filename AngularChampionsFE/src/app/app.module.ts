@@ -8,12 +8,14 @@ import {CommonModule} from "@angular/common";
 import {HttpClientModule} from "@angular/common/http";
 import { ChampionFormComponent } from './champion-form/champion-form.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { UpdateChampionComponent } from './update-champion/update-champion.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ChampionListComponent,
     ChampionFormComponent,
+    UpdateChampionComponent,
   ],
   imports: [
     CommonModule,
